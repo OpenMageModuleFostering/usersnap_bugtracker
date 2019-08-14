@@ -1,0 +1,86 @@
+<?xml version="1.0"?>
+<package>
+    <name>Usersnap_Bugtracker</name>
+    <version>1.0.0</version>
+    <stability>stable</stability>
+    <license>GPL-3.0+</license>
+    <channel>community</channel>
+    <extends/>
+    <summary>Usersnap integration with additional debug information</summary>
+    <description># Usersnap Bugtracker&#xD;
+We've created a Usersnap Magento integration with some optional debug information.&#xD;
+It is installed as a Magento module without hacking Magento's core.&#xD;
+&#xD;
+## INSTALLATION &#xD;
+&#xD;
+### A) Via Composer - Recommended&#xD;
+Add following code to the composer.json&#xD;
+&lt;pre&gt;&#xD;
+"require": {&#xD;
+        "usersnap/bugtracker": "*",&#xD;
+    },&#xD;
+&lt;/pre&gt;&#xD;
+&#xD;
+### B) Via Modman (https://github.com/colinmollenhour/modman)&#xD;
+&#xD;
+&lt;pre&gt;&#xD;
+cd [magento root folder]&#xD;
+modman init&#xD;
+modman clone https://github.com/pointia/Usersnap_Bugtracker.git&#xD;
+&lt;/pre&gt;&#xD;
+&#xD;
+ - Make sure you've cleaned Magento's cache to enable the new module; hit refresh&#xD;
+&#xD;
+### C) Via Magento Connect&#xD;
+Extension is not updated regularly. I recommend using modman.&#xD;
+&#xD;
+&lt;pre&gt;&#xD;
+cd [magento root folder]&#xD;
+sudo ./mage install community Usersnap_Bugtracker&#xD;
+&lt;/pre&gt;&#xD;
+&#xD;
+### Protected Sites / Usersnap behind Firewall&#xD;
+If you are using a staging setup which is protected using BasicAuth (.htaccess), please grant the Usersnap servers (*.usersnap.com) acccess.&#xD;
+&#xD;
+Configuration for Apache&#xD;
+&lt;pre&gt;&#xD;
+Order deny,allow&#xD;
+Deny from all&#xD;
+&#xD;
+AuthType Basic&#xD;
+AuthName "Password protected"&#xD;
+Require valid-user&#xD;
+AuthUserFile /path/to/your/.htpasswd&#xD;
+&#xD;
+Allow from .usersnap.com&#xD;
+Satisfy Any&#xD;
+&lt;/pre&gt;&#xD;
+For further information visit &lt;a href="https://usersnap.com/help/troubleshooting/protected" target="_blank"&gt;https://usersnap.com/help/troubleshooting/protected&lt;/a&gt;&#xD;
+&#xD;
+&#xD;
+&#xD;
+&#xD;
+## FEATURES &#xD;
+ - Easily report bugs with the Usersnap Bugtracker integration (for more info visit &lt;a href="www.usersnap.com" target="_blank"&gt;www.usersnap.com&lt;/a&gt;)&#xD;
+ - Connect with 20+ Systems ( E-Mail, Basecamp, Jira, asana, Trello, github, ...)&#xD;
+ - Customizable Feedback Widget (Enable, Tools, Button Text, Widget Position, Required Fields, Language, ...)&#xD;
+ - Useful Magento Debug Information&#xD;
+    - Written as Event Observer (Event: usersnap_debug_info, Object: "debug_info") thus you can write your own code and deactivate default info in the local.xml&#xD;
+    - Magento Version + Module Versions (Useful for different Environments)&#xD;
+    - Store Information&#xD;
+    - Controller Information&#xD;
+    - Cookie Information&#xD;
+    - Layout Handles&#xD;
+    - Design Information&#xD;
+    - Customer Information&#xD;
+    - Session Information (disabled by default)&#xD;
+    - Quote Information (incl. Quote Items, price, currency, address, ...)&#xD;
+    - Wishlist Information</description>
+    <notes>First Release</notes>
+    <authors><author><name>Andreas Pointner</name><user>pointia</user><email>andreaspointner@gmail.com</email></author></authors>
+    <date>2014-11-29</date>
+    <time>12:55:38</time>
+    <contents><target name="magecommunity"><dir name="Usersnap"><dir name="Bugtracker"><dir name="Block"><file name="CustomerEmail.php" hash="8ff80f75b9c2132e7a28d999143cc33e"/><file name="Debug.php" hash="57a7aabca37aa30f08f8390e7b9b3f26"/><file name="Track.php" hash="d4285c58247e753a21af91845631c0e6"/></dir><dir name="Helper"><file name="Config.php" hash="23ba172c93578f5efd6f8c2f06a2e123"/><file name="Data.php" hash="73b900eb09c97653f06f48967e8f343b"/></dir><dir name="Model"><dir name="Observer"><file name="Debug.php" hash="1748eb50b35db3780ea8dd1b4fcb1056"/><file name="Quote.php" hash="f389b7ed96185a2834547e5afb879d81"/><file name="Wishlist.php" hash="cd2a4f4696146e4258f5808121ad1544"/></dir><dir name="System"><dir name="Config"><dir name="Source"><file name="Abstract.php" hash="144b9b9221168758d1617adbcea187aa"/><file name="DefaultNoOptReq.php" hash="67e8b02f74cf5f9da57cf6df52140acb"/><file name="DefaultYesNo.php" hash="fb17fd7a6e1f92eab082565e87327870"/><file name="Halign.php" hash="c26e3701236f14d758bc14754a9fd6cc"/><file name="Language.php" hash="85d3bfa167cb33b242c758617048f75b"/><file name="Valign.php" hash="e51a35d96104c82f5dd8d782113690d9"/></dir></dir></dir></dir><dir name="etc"><file name="config.xml" hash="73125c99b5ab26f6dfef3c69d72f0cca"/><file name="system.xml" hash="d5e1985f9d1f47a4326edc3a947882b1"/></dir></dir></dir></target><target name="magedesign"><dir name="frontend"><dir name="base"><dir name="default"><dir name="layout"><file name="bugtracker.xml" hash="49cb6105c57c2e21d93d007d1d93d419"/></dir><dir name="template"><dir name="bugtracker"><file name="customerEmail.phtml" hash="98b858fb10050c545239f82bfd54c92f"/><file name="debug.phtml" hash="0cf3eadae6eeb607c9a0e5de8bd040fb"/><file name="track.phtml" hash="f5e8f4fbc407d7f0a42bed9b28b8bd66"/></dir></dir></dir></dir></dir><dir name="adminhtml"><dir name="base"><dir name="default"><dir name="layout"><file name="bugtracker.xml" hash="49cb6105c57c2e21d93d007d1d93d419"/></dir><dir name="template"><dir name="bugtracker"><file name="customerEmail.phtml" hash="98b858fb10050c545239f82bfd54c92f"/><file name="debug.phtml" hash="0cf3eadae6eeb607c9a0e5de8bd040fb"/><file name="track.phtml" hash="f5e8f4fbc407d7f0a42bed9b28b8bd66"/></dir></dir></dir></dir></dir></target><target name="mageetc"><dir name="modules"><file name="Usersnap_Bugtracker.xml" hash="5ed937084ac09e88a6c2612594e855a9"/></dir></target></contents>
+    <compatible/>
+    <dependencies><required><php><min>5.3.0</min><max>6.0.0</max></php></required></dependencies>
+</package>
