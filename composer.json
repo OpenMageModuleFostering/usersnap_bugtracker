@@ -1,5 +1,5 @@
 {
-    "name": "OpenMageModuleFostering\/Usersnap_Bugtracker",
+    "name": "openmage-module-fostering\/usersnap_bugtracker",
     "type": "magento-module",
     "license": "GPL-3.0+",
     "homepage": "",
