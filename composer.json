@@ -1,16 +1,19 @@
 {
-    "name": "OpenMageModuleFostering/Usersnap_Bugtracker",
+    "name": "OpenMageModuleFostering\/Usersnap_Bugtracker",
     "type": "magento-module",
     "license": "GPL-3.0+",
     "homepage": "",
     "description": "Usersnap integration with additional debug information",
     "authors": [
-    {
-        "name": "Andreas Pointner",
-        "email": "andreaspointner@gmail.com"
-    }
-],
+        {
+            "name": "Andreas Pointner",
+            "email": "andreaspointner@gmail.com"
+        }
+    ],
     "suggest": {
-        "magento-hackathon/magento-composer-installer": "*"
-    }
+        "magento-hackathon\/magento-composer-installer": "*"
+    },
+    "keywords": [
+        "openmage-module"
+    ]
 }
